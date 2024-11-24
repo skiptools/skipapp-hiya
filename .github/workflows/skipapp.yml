@@ -24,8 +24,6 @@ jobs:
         with:
           path: skipapp-hiya-repo
       - name: Compare hiya-skip template with skipapp-hiya repo
-        # disabled until we stabilize the project format
-        if: false
         run: |
           brew install skiptools/skip/skip
           ./skipapp-hiya-repo/scripts/diff_template.sh skipapp-hiya skipapp-hiya-repo
