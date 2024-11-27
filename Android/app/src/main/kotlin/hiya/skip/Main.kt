@@ -30,7 +30,7 @@ open class AndroidAppMain: Application {
     override fun onCreate() {
         super.onCreate()
         logger.info("starting app")
-        skip.android.bridge.kt.AndroidBridge.initBridge(this, "HiyaSkipModel")
+        ProcessInfo.launch(applicationContext)
     }
 
     companion object {
