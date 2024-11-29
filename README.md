@@ -1,7 +1,94 @@
 # HiyaSkip
 
-This is a [Skip](https://skip.tools) dual-platform app project.
-It builds a native app for both iOS and Android.
+This is a [Skip](https://skip.tools) dual-platform app project
+that demonstrates the integration between a native Swift model
+layer compiled for Android connected to a transpiled SwiftUI
+user interface. For more information on using natively-compiled
+Swift on Android, see the
+[native swift documentation](https://skip.tools/docs/native).
+
+This is the exact project with will be output when running the command:
+
+```
+skip init --appid=hiya.skip skipapp-hiya HiyaSkip HiyaSkipModel HiyaSkipLogic
+```
+
+The package will contain three modules:
+
+1. A top-level `HiyaSkip` target that uses SwiftUI that will be transpiled to Jetpack Compose on Android to make up the user interface portion of the app
+2. A `HiyaSkipModel` model layer that will be compiled natively for both Android and iOS. It contains an `@Observable ViewModel` that will be used directly on iOS, and on Android will be bridged to the transpiled user-interface layer using [SkipFuse](https://github.com/skiptools/skip-fuse) and [SkipBridge](https://github.com/skiptools/skip-bridge).
+3. A pure swift cross-platform `HiyaSkipLogic` module that does not use any bridging, and is depended on by `HiyaSkipModel`
+
+
+The project structure looks like:
+
+```
+skipapp-hiya/
+├── Android
+│   ├── app
+│   │   ├── build.gradle.kts
+│   │   ├── proguard-rules.pro
+│   │   └── src
+│   │       └── main
+│   │           ├── AndroidManifest.xml
+│   │           └── kotlin
+│   │               └── hiya
+│   │                   └── skip
+│   │                       └── Main.kt
+│   ├── gradle.properties
+│   └── settings.gradle.kts
+├── Darwin
+│   ├── Assets.xcassets
+│   │   ├── AccentColor.colorset
+│   │   │   └── Contents.json
+│   │   └── Contents.json
+│   ├── Entitlements.plist
+│   ├── HiyaSkip.xcconfig
+│   ├── HiyaSkip.xcodeproj
+│   │   └── project.pbxproj
+│   ├── Info.plist
+│   └── Sources
+│       └── HiyaSkipAppMain.swift
+├── Package.swift
+├── README.md
+├── Skip.env
+├── Sources
+│   ├── HiyaSkip
+│   │   ├── ContentView.swift
+│   │   ├── HiyaSkipApp.swift
+│   │   ├── Resources
+│   │   │   ├── Localizable.xcstrings
+│   │   │   └── Module.xcassets
+│   │   │       └── Contents.json
+│   │   └── Skip
+│   │       └── skip.yml
+│   ├── HiyaSkipLogic
+│   │   └── HiyaSkipLogic.swift
+│   └── HiyaSkipModel
+│       ├── Resources
+│       │   └── Localizable.xcstrings
+│       ├── Skip
+│       │   └── skip.yml
+│       └── ViewModel.swift
+└── Tests
+    ├── HiyaSkipModelTests
+    │   ├── HiyaSkipModelTests.swift
+    │   ├── Resources
+    │   │   └── TestData.json
+    │   ├── Skip
+    │   │   └── skip.yml
+    │   └── XCSkipTests.swift
+    └── HiyaSkipTests
+        ├── HiyaSkipTests.swift
+        ├── Resources
+        │   └── TestData.json
+        ├── Skip
+        │   └── skip.yml
+        └── XCSkipTests.swift
+
+```
+
+
 
 ## Building
 
