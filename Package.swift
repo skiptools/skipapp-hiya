@@ -31,6 +31,7 @@ let package = Package(
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .target(name: "HiyaSkipModel", dependencies: [
             "HiyaSkipLogic",
+            .product(name: "SkipModel", package: "skip-model"),
             .product(name: "SkipFuse", package: "skip-fuse")
         ], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .testTarget(name: "HiyaSkipModelTests", dependencies: [
