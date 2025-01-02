@@ -19,6 +19,11 @@ jobs:
     env:
       DEVELOPER_DIR: /Applications/Xcode_15.0.app/Contents/Developer
     steps:
+      - name: Cache Homebrew packages
+        uses: actions/cache@v4
+        with:
+          path: ~/Library/Caches/Homebrew
+          key: homebrew-packages
       - run: brew install skiptools/skip/skip
       - uses: actions/checkout@v4
         with:
