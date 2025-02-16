@@ -10,7 +10,7 @@ let logger: Logger = Logger(subsystem: "HiyaSkipModel", category: "Tests")
 final class HiyaSkipModelTests: XCTestCase {
     override func setUp() {
         #if os(Android)
-        // needed to load the compiled bridge from the traspiled tests
+        // needed to load the compiled bridge from the transpiled tests
         loadPeerLibrary(packageName: "skipapp-hiya", moduleName: "HiyaSkipModel")
         #endif
     }
