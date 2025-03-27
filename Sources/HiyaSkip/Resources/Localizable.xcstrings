@@ -1,12 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld Items" : {
-
-    },
-    "Add" : {
-
-    },
     "Appearance" : {
       "localizations" : {
         "es" : {
@@ -35,9 +29,6 @@
         }
       }
     },
-    "Cancel" : {
-
-    },
     "Dark" : {
       "localizations" : {
         "es" : {
@@ -65,12 +56,6 @@
           }
         }
       }
-    },
-    "Date" : {
-
-    },
-    "Favorite" : {
-
     },
     "Hello [%@](https://skip.tools)!" : {
       "localizations" : {
@@ -184,14 +169,7 @@
         }
       }
     },
-    "Notes" : {
-
-    },
-    "Powered by [Skip](https://skip.tools)" : {
-
-    },
     "Powered by Skip and %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -218,9 +196,6 @@
           }
         }
       }
-    },
-    "Save" : {
-
     },
     "Settings" : {
       "localizations" : {
@@ -274,19 +249,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "系统"
-          }
-        }
-      }
-    },
-    "Title" : {
-
-    },
-    "Version %@ (%@)" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Version %1$@ (%2$@)"
           }
         }
       }
