@@ -19,7 +19,8 @@ let package = Package(
         .package(url: "https://source.skip.tools/skip.git", from: "1.3.0"),
         .package(url: "https://source.skip.tools/skip-ui.git", from: "1.26.3"),
         .package(url: "https://source.skip.tools/skip-model.git", from: "1.4.2"),
-        .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.0")
+        .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.0"),
+        .package(url: "https://github.com/theleftbit/BSWFoundation.git", branch: "not-like-us"),
     ],
     targets: [
         .target(name: "HiyaSkip", dependencies: [
@@ -32,6 +33,7 @@ let package = Package(
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .target(name: "HiyaSkipModel", dependencies: [
             "HiyaSkipLogic",
+            .product(name: "BSWFoundation", package: "BSWFoundation"),
             .product(name: "SkipModel", package: "skip-model"),
             .product(name: "SkipFuse", package: "skip-fuse")
         ], plugins: [.plugin(name: "skipstone", package: "skip")]),

@@ -16,6 +16,15 @@ struct ContentView: View {
                 VStack {
                     WelcomeView()
                     Divider()
+
+                    Text("GUID: \(DefaultsHolder.shared.installationGuidBridged ?? "NONE")")
+                        .font(.title2)
+                    Button("Change GUID") {
+                        DefaultsHolder.shared.installationGuidBridged = UUID().uuidString
+                    }
+                        .buttonStyle(.borderedProminent)
+
+
                     Text("Counter: \(viewModel.counter)")
                         .font(.title2)
                     Button("Increment") {

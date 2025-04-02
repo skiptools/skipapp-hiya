@@ -1,12 +1,28 @@
 import Foundation
 import Observation
 import SkipFuse
+import BSWFoundation
 
 fileprivate let logger: Logger = Logger(subsystem: "HiyaSkipModel", category: "HiyaSkipModel")
+
+public class DefaultsHolder {
+    public var installationGuidBridged: String? {
+        get {  installationGuid }
+        set { installationGuid = newValue }
+    }
+
+    @UserDefaultsBacked(key: "installation-guid", defaultValue: nil) private var installationGuid: String?
+
+    public static let shared = DefaultsHolder()
+
+    private init() {
+    }
+}
 
 /// The Observable ViewModel used by the application.
 @Observable public class ViewModel {
     public var name = "Skipper"
+
     public var items: [Item] = loadItems() {
         didSet { saveItems() }
     }

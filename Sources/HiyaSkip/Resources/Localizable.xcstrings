@@ -38,6 +38,9 @@
     "Cancel" : {
 
     },
+    "Change GUID" : {
+
+    },
     "Counter: %@" : {
 
     },
@@ -73,6 +76,9 @@
 
     },
     "Favorite" : {
+
+    },
+    "GUID: %@" : {
 
     },
     "Hello [%@](https://skip.tools)!" : {
