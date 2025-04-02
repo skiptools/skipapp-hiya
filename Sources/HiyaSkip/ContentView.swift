@@ -13,7 +13,16 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $tab) {
             NavigationStack {
-                WelcomeView()
+                VStack {
+                    WelcomeView()
+                    Divider()
+                    Text("Counter: \(viewModel.counter)")
+                        .font(.title2)
+                    Button("Increment") {
+                        viewModel.counter += "X"
+                    }
+                        .buttonStyle(.borderedProminent)
+                }
             }
             .tabItem { Label("Welcome", systemImage: "heart.fill") }
             .tag(ContentTab.welcome)

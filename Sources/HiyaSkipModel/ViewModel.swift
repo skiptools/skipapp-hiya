@@ -11,6 +11,12 @@ fileprivate let logger: Logger = Logger(subsystem: "HiyaSkipModel", category: "H
         didSet { saveItems() }
     }
 
+    public var counter: String = UserDefaults.standard.string(forKey: "counter") ?? "" {
+        didSet {
+            UserDefaults.standard.set(counter, forKey: "counter")
+        }
+    }
+
     public init() {
     }
 
