@@ -1,9 +1,9 @@
 import Foundation
 import OSLog
-
 import SwiftUI
 
-fileprivate let logger: Logger = Logger(subsystem: "hiya.skip", category: "HiyaSkip")
+/// A logger for the HiyaSkip module.
+let logger: Logger = Logger(subsystem: "hiya.skip", category: "HiyaSkip")
 
 /// The shared top-level view for the app, loaded from the platform-specific App delegates below.
 ///
@@ -22,7 +22,7 @@ public struct HiyaSkipRootView : View {
 
 /// Global application delegate functions.
 ///
-/// This functions can update a shared observable object to communicate app state changes to interested views.
+/// These functions can update a shared observable object to communicate app state changes to interested views.
 /// The sender for each of these functions will be either a `UIApplication` (iOS) or `AppCompatActivity` (Android)
 public class HiyaSkipAppDelegate {
     public static let shared = HiyaSkipAppDelegate()

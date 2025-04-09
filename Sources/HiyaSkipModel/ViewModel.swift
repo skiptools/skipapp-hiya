@@ -2,7 +2,8 @@ import Foundation
 import Observation
 import SkipFuse
 
-fileprivate let logger: Logger = Logger(subsystem: "HiyaSkipModel", category: "HiyaSkipModel")
+/// A logger for the HiyaSkipModel module.
+let logger: Logger = Logger(subsystem: "hiya.skip.model", category: "HiyaSkipModel")
 
 /// The Observable ViewModel used by the application.
 @Observable public class ViewModel {

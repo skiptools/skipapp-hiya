@@ -4,7 +4,7 @@ AGAINST=${2:-"."}
 
 TMPDIR=`mktemp -d`
 cd ${TMPDIR}
-skip init --no-build --native-model --appid=hiya.skip --version 1.0.0 ${PACKAGE} HiyaSkip HiyaSkipModel HiyaSkipLogic
+${SKIPCMD:-skip} init --no-build --native-model --appid=hiya.skip --version 1.0.0 ${PACKAGE} HiyaSkip HiyaSkipModel HiyaSkipLogic
 
 cd -
 
