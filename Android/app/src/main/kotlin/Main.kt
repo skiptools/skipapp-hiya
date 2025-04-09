@@ -70,32 +70,32 @@ open class MainActivity: AppCompatActivity {
 
     override fun onStart() {
         super.onStart()
-        HiyaSkipAppDelegate.shared.onStart(this)
+        HiyaSkipAppDelegate.shared.onStart()
     }
 
     override fun onResume() {
         super.onResume()
-        HiyaSkipAppDelegate.shared.onResume(this)
+        HiyaSkipAppDelegate.shared.onResume()
     }
 
     override fun onPause() {
         super.onPause()
-        HiyaSkipAppDelegate.shared.onPause(this)
+        HiyaSkipAppDelegate.shared.onPause()
     }
 
     override fun onStop() {
         super.onStop()
-        HiyaSkipAppDelegate.shared.onStop(this)
+        HiyaSkipAppDelegate.shared.onStop()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        HiyaSkipAppDelegate.shared.onDestroy(this)
+        HiyaSkipAppDelegate.shared.onDestroy()
     }
 
     override fun onLowMemory() {
         super.onLowMemory()
-        HiyaSkipAppDelegate.shared.onLowMemory(this)
+        HiyaSkipAppDelegate.shared.onLowMemory()
     }
 
     override fun onRestart() {
