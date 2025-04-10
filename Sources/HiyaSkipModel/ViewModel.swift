@@ -7,7 +7,6 @@ let logger: Logger = Logger(subsystem: "hiya.skip.model", category: "HiyaSkipMod
 
 /// The Observable ViewModel used by the application.
 @Observable public class ViewModel {
-    public var name = "Skipper"
     public var items: [Item] = loadItems() {
         didSet { saveItems() }
     }
