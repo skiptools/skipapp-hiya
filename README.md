@@ -10,7 +10,7 @@ Swift on Android, see the
 This is the exact project with will be output when running the command:
 
 ```
-skip init --appid=hiya.skip skipapp-hiya HiyaSkip HiyaSkipModel HiyaSkipLogic
+skip init --native-model --appid=hiya.skip skipapp-hiya HiyaSkip HiyaSkipModel HiyaSkipLogic
 ```
 
 The package will contain three modules:

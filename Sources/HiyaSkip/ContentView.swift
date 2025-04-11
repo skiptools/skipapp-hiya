@@ -41,10 +41,8 @@ struct ContentView: View {
 struct WelcomeView : View {
     @State var heartBeating = false
     @Binding var welcomeName: String
-    @Environment(ViewModel.self) var viewModel: ViewModel
 
     var body: some View {
-        @Bindable var viewModel = viewModel
         VStack(spacing: 0) {
             Text("Hello [\(welcomeName)](https://skip.tools)!")
                 .padding()
@@ -62,7 +60,6 @@ struct ItemListView : View {
     @Environment(ViewModel.self) var viewModel: ViewModel
 
     var body: some View {
-        @Bindable var viewModel = viewModel
         List {
             ForEach(viewModel.items) { item in
                 NavigationLink(value: item) {
@@ -135,12 +132,10 @@ struct ItemView : View {
 }
 
 struct SettingsView : View {
-    @Environment(ViewModel.self) var viewModel: ViewModel
     @Binding var appearance: String
     @Binding var welcomeName: String
 
     var body: some View {
-        @Bindable var viewModel = viewModel
         Form {
             TextField("Name", text: $welcomeName)
             Picker("Appearance", selection: $appearance) {
@@ -172,5 +167,3 @@ struct PlatformHeartView : View {
        #endif
     }
 }
-
- 
