@@ -12,7 +12,7 @@ let package = Package(
         .library(name: "HiyaSkipLogic", type: .dynamic, targets: ["HiyaSkipLogic"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "1.6.1"),
+        .package(url: "https://source.skip.tools/skip.git", from: "1.6.6"),
         .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0"),
         .package(url: "https://source.skip.tools/skip-model.git", from: "1.0.0"),
         .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.0")
@@ -30,11 +30,11 @@ let package = Package(
             "HiyaSkipLogic",
             .product(name: "SkipModel", package: "skip-model"),
             .product(name: "SkipFuse", package: "skip-fuse")
-        ], plugins: [.plugin(name: "skipstone", package: "skip")]),
+        ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .testTarget(name: "HiyaSkipModelTests", dependencies: [
             "HiyaSkipModel",
             .product(name: "SkipTest", package: "skip")
-        ], plugins: [.plugin(name: "skipstone", package: "skip")]),
-        .target(name: "HiyaSkipLogic", dependencies: []),
+        ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
+        .target(name: "HiyaSkipLogic", dependencies: [], resources: [.process("Resources")]),
     ]
 )
