@@ -22,7 +22,7 @@ jobs:
         with:
           path: ~/Library/Caches/Homebrew
           key: homebrew-packages
-      - run: brew install skiptools/skip/skip
+      - uses: skiptools/actions/setup-skip@v1
       - uses: actions/checkout@v4
         with:
           path: skipapp-hiya-repo
