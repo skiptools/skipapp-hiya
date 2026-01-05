@@ -12,10 +12,10 @@ let package = Package(
         .library(name: "HiyaSkipLogic", type: .dynamic, targets: ["HiyaSkipLogic"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "1.6.6"),
-        .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0"),
-        .package(url: "https://source.skip.tools/skip-model.git", from: "1.0.0"),
-        .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.0")
+        .package(url: "https://source.skip.tools/skip.git", from: "1.6.35"),
+        .package(url: "https://source.skip.tools/skip-ui.git", from: "1.44.5"),
+        .package(url: "https://source.skip.tools/skip-model.git", from: "1.7.0"),
+        .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.2")
     ],
     targets: [
         .target(name: "HiyaSkip", dependencies: [
