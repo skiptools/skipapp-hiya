@@ -1,11 +1,11 @@
 # HiyaSkip
 
-This is a [Skip](https://skip.tools) dual-platform app project
+This is a [Skip](https://skip.dev) dual-platform app project
 that demonstrates the integration between a native Swift model
 layer compiled for Android connected to a transpiled SwiftUI
 user interface. For more information on using natively-compiled
 Swift on Android, see the
-[native swift documentation](https://skip.tools/docs/native).
+[native swift documentation](https://skip.dev/docs/native).
 
 This is the exact project with will be output when running the command:
 
@@ -122,7 +122,7 @@ The general flow for contributing to this and any other Skip package is:
 
 1. Fork this repository and enable actions from the "Actions" tab
 2. Check out your fork locally
-3. When developing alongside a Skip app, add the package to a [shared workspace](https://skip.tools/docs/contributing) to see your changes incorporated in the app
+3. When developing alongside a Skip app, add the package to a [shared workspace](https://skip.dev/docs/contributing) to see your changes incorporated in the app
 4. Push your changes to your fork and ensure the CI checks all pass in the Actions tab
 5. Add your name to the Skip [Contributor Agreement](https://github.com/skiptools/clabot-config)
 6. Open a Pull Request from your fork with a description of your changes
