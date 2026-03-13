@@ -1,4 +1,4 @@
-import XCTest
+import Testing
 import OSLog
 import Foundation
 import SkipBridge
@@ -6,28 +6,27 @@ import SkipBridge
 
 let logger: Logger = Logger(subsystem: "HiyaSkipModel", category: "Tests")
 
-@available(macOS 13, *)
-final class HiyaSkipModelTests: XCTestCase {
-    override func setUp() {
-        #if os(Android)
-        // needed to load the compiled bridge from the transpiled tests
+@Suite struct HiyaSkipModelTests {
+    init() {
+        #if SKIP
+        // needed to load the compiled bridge when the tests are transpiled
         loadPeerLibrary(packageName: "skipapp-hiya", moduleName: "HiyaSkipModel")
         #endif
     }
 
-    func testHiyaSkipModel() throws {
+    @Test func hiyaSkipModel() throws {
         logger.log("running testHiyaSkipModel")
-        XCTAssertEqual(1 + 2, 3, "basic test")
+        #expect(1 + 2 == 3, "basic test")
     }
 
-    func testViewModel() async throws {
+    @Test func viewModel() async throws {
         let vm = ViewModel()
         vm.items.append(Item(title: "ABC"))
-        XCTAssertFalse(vm.items.isEmpty)
-        XCTAssertEqual("ABC", vm.items.last?.title)
+        #expect(!vm.items.isEmpty)
+        #expect(vm.items.last?.title == "ABC")
 
         vm.clear()
-        XCTAssertTrue(vm.items.isEmpty)
+        #expect(vm.items.isEmpty)
     }
 
 }
