@@ -1,3 +1,6 @@
 # # Skip configuration for HiyaSkipModel module
+skip:
+  mode: 'transpiled'
+
 #build:
 #  contents:
