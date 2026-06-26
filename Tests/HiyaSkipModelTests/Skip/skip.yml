@@ -4,4 +4,4 @@
 #  contents:
 
 skip:
-  mode: 'transpiled'
+  mode: 'native'

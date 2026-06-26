@@ -1,14 +1,10 @@
 import Testing
-import OSLog
 import Foundation
 @testable import HiyaSkip
-
-let logger: Logger = Logger(subsystem: "HiyaSkip", category: "Tests")
 
 @Suite struct HiyaSkipTests {
 
     @Test func hiyaSkip() throws {
-        logger.log("running testHiyaSkip")
         #expect(1 + 2 == 3, "basic test")
     }
 
